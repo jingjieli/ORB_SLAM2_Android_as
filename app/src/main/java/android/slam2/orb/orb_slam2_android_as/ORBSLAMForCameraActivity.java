@@ -51,7 +51,7 @@ public class ORBSLAMForCameraActivity extends Activity implements
 	private static final int INIT_FINISHED=0x00010001;
 	
 	private CameraBridgeViewBase mOpenCvCameraView;
-	private boolean              mIsJavaCamera = false;
+	private boolean              mIsJavaCamera = true;
 	private MenuItem             mItemSwitchCamera = null;
 
 	private final int CONTEXT_CLIENT_VERSION = 3;
@@ -78,12 +78,16 @@ public class ORBSLAMForCameraActivity extends Activity implements
         }
     };
 	
+//	static {
+//		if (!OpenCVLoader.initDebug()) {
+//			Log.d(TAG, "OpenCV init failed");
+//		} else {
+//			System.loadLibrary("ORB_SLAM2_EXCUTOR");
+//		}
+//	}
+
 	static {
-		if (!OpenCVLoader.initDebug()) {
-			Log.d(TAG, "OpenCV init failed");
-		} else {
-			System.loadLibrary("ORB_SLAM2_EXCUTOR");
-		}
+		System.loadLibrary("ORB_SLAM2_EXCUTOR");
 	}
 
 	@Override
@@ -99,10 +103,10 @@ public class ORBSLAMForCameraActivity extends Activity implements
 		
 		imgDealed = (ImageView) findViewById(R.id.img_dealed);
 		
-		if (mIsJavaCamera)
+		//if (mIsJavaCamera)
             mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_java_surface_view);
-        else
-            mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_native_surface_view);
+        //else
+        //    mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_native_surface_view);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
 
@@ -200,7 +204,7 @@ public class ORBSLAMForCameraActivity extends Activity implements
 		super.onResume();
 		mGLSurfaceView.onResume();
 		
-		//OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_3, this, mLoaderCallback);
+		OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
 	}
 
 	
@@ -240,22 +244,22 @@ public class ORBSLAMForCameraActivity extends Activity implements
 
 	        if (item == mItemSwitchCamera) {
 	        	isSLAMRunning=false;
-	            mOpenCvCameraView.setVisibility(SurfaceView.GONE);
-	            mIsJavaCamera = !mIsJavaCamera;
-
-	            if (mIsJavaCamera) {
-	                mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_java_surface_view);
-	                toastMesage = "Java Camera";
-	            } else {
-	                mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_native_surface_view);
-	                toastMesage = "Native Camera";
-	            }
-
-	            mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
-	            mOpenCvCameraView.setCvCameraViewListener(this);
-	            mOpenCvCameraView.enableView();
-	            Toast toast = Toast.makeText(this, toastMesage, Toast.LENGTH_LONG);
-	            toast.show();
+//	            mOpenCvCameraView.setVisibility(SurfaceView.GONE);
+//	            mIsJavaCamera = !mIsJavaCamera;
+//
+//	            if (mIsJavaCamera) {
+//	                mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_java_surface_view);
+//	                toastMesage = "Java Camera";
+//	            } else {
+//	                mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.tutorial1_activity_native_surface_view);
+//	                toastMesage = "Native Camera";
+//	            }
+//
+//	            mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
+//	            mOpenCvCameraView.setCvCameraViewListener(this);
+//	            mOpenCvCameraView.enableView();
+//	            Toast toast = Toast.makeText(this, toastMesage, Toast.LENGTH_LONG);
+//	            toast.show();
 	        }
 
 	        return true;

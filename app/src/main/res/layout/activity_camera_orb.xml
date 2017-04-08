@@ -33,7 +33,7 @@
                 android:visibility="gone"
                 opencv:camera_id="any"
                 opencv:show_fps="false" />
-
+            <!--
             <org.opencv.android.NativeCameraView
                 android:id="@+id/tutorial1_activity_native_surface_view"
                 android:layout_width="200dip"
@@ -46,6 +46,7 @@
                 android:visibility="gone"
                 opencv:camera_id="any"
                 opencv:show_fps="false" />
+                -->
         </RelativeLayout>
 
         <View

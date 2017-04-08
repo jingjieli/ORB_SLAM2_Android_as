@@ -25,7 +25,7 @@
 #include "Optimizer.h"
 #include "ORBmatcher.h"
 
-#include<thread>
+#include <thread>
 
 namespace ORB_SLAM2
 {

@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "android.slam2.orb.orb_slam2_android_as"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -35,5 +35,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
     testCompile 'junit:junit:4.12'
-    compile project(':openCVLibrary249')
+    compile project(':openCVLibrary320')
 }

@@ -25,7 +25,7 @@ MAIN_DIR:=$(LOCAL_PATH)
 OPENCV_LIB_TYPE:=STATIC
 ifeq ("$(wildcard $(OPENCV_MK_PATH))","")  
 #try to load OpenCV.mk from default install location  
-include ~/Tools/OpenCV-2.4.9-android-sdk/sdk/native/jni/OpenCV.mk
+include $(LOCAL_PATH)/Thirdparty/OpenCV/sdk/native/jni/OpenCV.mk
 else
 include $(OPENCV_MK_PATH)  
 endif 
@@ -62,7 +62,7 @@ LOCAL_CPPFLAGS += -D__cplusplus=201103L
 #LOCAL_EXPORT_C_INCLUDES+=$(LOCAL_PATH)/Thirdparty/DBoW2/DLib/include/DUtilsCV
 LOCAL_EXPORT_C_INCLUDES+=$(LOCAL_PATH)/Thirdparty/DBoW2/DLib/include
 LOCAL_EXPORT_C_INCLUDES+=$(BOOST_INCLUDE_PATH)
-LOCAL_EXPORT_C_INCLUDES+=E:/ORB_SLAM2/OpenCV-2.4.9-android-sdk/sdk/native/jni/include
+LOCAL_EXPORT_C_INCLUDES+=$(LOCAL_PATH)/Thirdparty/OpenCV/sdk/native/jni/include
 LOCAL_PATH:=$(MAIN_DIR)
 include $(BUILD_SHARED_LIBRARY)
 ###############################################################
@@ -74,7 +74,7 @@ MAIN_DIR:=$(LOCAL_PATH)
 OPENCV_LIB_TYPE:=STATIC
 ifeq ("$(wildcard $(OPENCV_MK_PATH))","")  
 #try to load OpenCV.mk from default install location  
-include ~/Tools/OpenCV-2.4.9-android-sdk/sdk/native/jni/OpenCV.mk
+include $(LOCAL_PATH)/Thirdparty/OpenCV/sdk/native/jni/OpenCV.mk
 else
 include $(OPENCV_MK_PATH)  
 endif 
@@ -188,7 +188,7 @@ MAIN_DIR:=$(LOCAL_PATH)
 OPENCV_LIB_TYPE:=STATIC
 ifeq ("$(wildcard $(OPENCV_MK_PATH))","")  
 #try to load OpenCV.mk from default install location  
-include ~/Tools/OpenCV-2.4.9-android-sdk/sdk/native/jni/OpenCV.mk
+include $(LOCAL_PATH)/Thirdparty/OpenCV/sdk/native/jni/OpenCV.mk
 else
 include $(OPENCV_MK_PATH)  
 endif 
@@ -215,8 +215,8 @@ include $(CLEAR_VARS)
 MAIN_DIR:=$(LOCAL_PATH)
 OPENCV_LIB_TYPE:=STATIC
 ifeq ("$(wildcard $(OPENCV_MK_PATH))","")  
-#try to load OpenCV.mk from default install location  
-include ~/Tools/OpenCV-2.4.9-android-sdk/sdk/native/jni/OpenCV.mk
+#try to load OpenCV.mk from default install location
+include $(LOCAL_PATH)/Thirdparty/OpenCV/sdk/native/jni/OpenCV.mk
 else
 include $(OPENCV_MK_PATH)  
 endif 
