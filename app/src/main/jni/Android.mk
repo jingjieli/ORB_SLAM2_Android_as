@@ -46,9 +46,9 @@ LOCAL_SRC_FILES+=$(FILE_LIST:$(LOCAL_PATH)/%=%)
 #LOCAL_SRC_FILES+=$(FILE_LIST:$(LOCAL_PATH)/%=%)
 
 ################BOOST#####################部分
-BOOST_VERSION      := 1_49
+BOOST_VERSION      := 1_63
 PROJECT_ROOT       := $(LOCAL_PATH)
-BOOST_INCLUDE_PATH := $(PROJECT_ROOT)/Thirdparty/Boost/include/boost-1_49
+BOOST_INCLUDE_PATH := $(PROJECT_ROOT)/Thirdparty/Boost/include/boost-1_63
 BOOST_LIB_PATH     := $(PROJECT_ROOT)/Thirdparty/Boost/lib
 LOCAL_C_INCLUDES+= $(BOOST_INCLUDE_PATH) 
 LOCAL_LDLIBS    := -llog
