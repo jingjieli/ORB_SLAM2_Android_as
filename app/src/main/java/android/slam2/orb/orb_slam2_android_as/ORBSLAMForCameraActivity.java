@@ -157,6 +157,7 @@ public class ORBSLAMForCameraActivity extends Activity implements
         						timestamp = (double)System.currentTimeMillis()/1000.0;
             					// TODO Auto-generated method stub
             					int[] resultInt = OrbNdkHelper.startCurrentORBForCamera(timestamp, addr, w, h);
+								Log.d(TAG, "ORBSLAMForCameraActivity startCurrentORBForCamera");
             					resultImg = Bitmap.createBitmap(w, h,
             										Config.RGB_565);
             					resultImg.setPixels(resultInt, 0, w, 0, 0, w, h);
@@ -272,6 +273,7 @@ public class ORBSLAMForCameraActivity extends Activity implements
 	    }
 
 	    public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
+			Log.d(TAG, "ORBSLAMForCameraActivity onCameraFrame");
 	    	Mat im=inputFrame.rgba();
 	    	synchronized (im) {
 	    		addr=im.getNativeObjAddr();
