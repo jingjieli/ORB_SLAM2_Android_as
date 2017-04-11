@@ -156,8 +156,9 @@ public class ORBSLAMForCameraActivity extends Activity implements
         					while(isSLAMRunning){
         						timestamp = (double)System.currentTimeMillis()/1000.0;
             					// TODO Auto-generated method stub
+								Log.d(TAG, "ORBSLAMForCameraActivity startCurrentORBForCamera start ---");
             					int[] resultInt = OrbNdkHelper.startCurrentORBForCamera(timestamp, addr, w, h);
-								Log.d(TAG, "ORBSLAMForCameraActivity startCurrentORBForCamera");
+								Log.d(TAG, "ORBSLAMForCameraActivity startCurrentORBForCamera end ---");
             					resultImg = Bitmap.createBitmap(w, h,
             										Config.RGB_565);
             					resultImg.setPixels(resultInt, 0, w, 0, 0, w, h);
